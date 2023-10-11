@@ -31,17 +31,19 @@ body {
 }
 
 .picked-number {
-  background-color: white;
   grid-area: pickfield;
-  display: none;
+  display: flex;
   text-align: center;
-  border: 2px solid black;
-  width: 60px;
-  height: 90px;
+
   margin: auto;
 }
-p {
+div {
+  border: 2px solid black;
+  background-color: white;
+  width: 60px;
+  height: 60px;
   margin-top: 20px;
+  margin-right: 10px;
   font-size: 3rem;
 }
 
