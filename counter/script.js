@@ -37,7 +37,7 @@ document.addEventListener("keypress", (event) => {
 });
 
 btnReset.addEventListener("click", () => {
-  count = 0;
+  counter = 0;
   number.textContent = 0;
   bar.style.width = 0;
 });
