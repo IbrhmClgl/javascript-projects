@@ -1,3 +1,5 @@
+"use strict";
+
 const btnReset = document.querySelector("button");
 const bar = document.querySelector(".bar");
 const container = document.querySelector(".container");
