@@ -1,0 +1,98 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Cinzel", serif;
+  user-select: none;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+.container {
+  position: absolute;
+  background-color: antiquewhite;
+  height: 900px;
+  width: 1200px;
+  display: grid;
+  place-items: center;
+  grid-template-areas:
+    "header"
+    "word"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 23rem 23rem 23rem;
+  grid-template-rows: 11rem;
+  place-items: center;
+  justify-content: space-between;
+  border-bottom: 0.15rem solid black;
+  font-size: 2.5rem;
+}
+
+.active-game {
+  display: grid;
+  place-items: center;
+  width: 368px;
+  height: 180px;
+  border-right: 0.15rem solid black;
+}
+
+.fails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 368px;
+  height: 180px;
+}
+
+.new-game {
+  display: grid;
+  place-items: center;
+  width: 368px;
+  height: 180px;
+  border-left: 0.15rem solid black;
+}
+
+.new-game:hover {
+  background-color: rgba(244, 195, 117, 0.622);
+  cursor: pointer;
+}
+
+main {
+  grid-area: word;
+  font-size: 100px;
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 80px 80px;
+  grid-template-columns: repeat(13, 85px);
+  grid-area: footer;
+}
+
+p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
+  font-size: 3.5rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+p:hover {
+  background-color: rgba(244, 195, 117, 0.622);
+  cursor: pointer;
+}
