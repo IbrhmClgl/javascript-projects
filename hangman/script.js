@@ -32,15 +32,6 @@ const x = document.querySelector(".x");
 const y = document.querySelector(".y");
 const z = document.querySelector(".z");
 
-// method for replace char at position index
-String.prototype.replaceAt = function (index, replacement) {
-  return (
-    this.substring(0, index) +
-    replacement +
-    this.substring(index + replacement.length)
-  );
-};
-
 let randomWord = words[Math.floor(Math.random() * words.length)];
 console.log(randomWord);
 
@@ -48,32 +39,45 @@ let counter = 1;
 let str = "-";
 let arr = str.repeat(randomWord.length).split("");
 
-// hiddenWord.textContent = str.repeat(randomWord.length);
 hiddenWord.textContent = arr.join("");
 
 newGame.addEventListener("click", () => {
   active.textContent = "ACTIVE";
   randomWord = words[Math.floor(Math.random() * words.length)];
+  arr = str.repeat(randomWord.length).split("");
   hiddenWord.textContent = str.repeat(randomWord.length).split("").join("");
-  counter = 0;
-  counterFails.textContent = counter;
+  counter = 1;
+  counterFails.textContent = 0;
 });
 
 function eventTrigger(letter, char) {
   letter.addEventListener("click", () => {
-    {
-      if (randomWord.includes(char)) {
-        const charPosition = randomWord.search(char);
-        arr = arr.join("").replaceAt(charPosition, char).split("");
-        console.log(arr);
-        console.log((hiddenWord.textContent = arr.join("")));
-      } else {
-        counterFails.textContent = counter;
-        if (counter < 10) {
-          counter++;
-        } else if (counter === 10) {
-          active.textContent = "FAIL";
-        }
+    let charPositions = [];
+
+    // Find all positions of the character in the randomWord
+    for (let i = 0; i < randomWord.length; i++) {
+      if (randomWord[i] === char) {
+        charPositions.push(i);
+      }
+    }
+
+    if (charPositions.length > 0) {
+      // Replace the character at all found positions
+      charPositions.forEach((position) => {
+        arr[position] = char;
+      });
+
+      hiddenWord.textContent = arr.join("");
+
+      if (arr.join("") === randomWord) {
+        active.textContent = "You won!";
+      }
+    } else {
+      counterFails.textContent = counter;
+      if (counter < 10) {
+        counter++;
+      } else if (counter === 10) {
+        active.textContent = "FAIL";
       }
     }
   });
