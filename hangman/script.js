@@ -32,7 +32,8 @@ const x = document.querySelector(".x");
 const y = document.querySelector(".y");
 const z = document.querySelector(".z");
 
-let randomWord = words[Math.floor(Math.random() * words.length)];
+let randomWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+
 console.log(randomWord);
 
 let counter = 1;
@@ -43,7 +44,7 @@ hiddenWord.textContent = arr.join("");
 
 newGame.addEventListener("click", () => {
   active.textContent = "ACTIVE";
-  randomWord = words[Math.floor(Math.random() * words.length)];
+  randomWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
   arr = str.repeat(randomWord.length).split("");
   hiddenWord.textContent = str.repeat(randomWord.length).split("").join("");
   counter = 1;
@@ -52,8 +53,7 @@ newGame.addEventListener("click", () => {
 
 function eventTrigger(letter, char) {
   letter.addEventListener("click", () => {
-    let charPositions = [];
-
+    var charPositions = [];
     // Find all positions of the character in the randomWord
     for (let i = 0; i < randomWord.length; i++) {
       if (randomWord[i] === char) {
@@ -80,6 +80,10 @@ function eventTrigger(letter, char) {
         active.textContent = "FAIL";
       }
     }
+    letter.setAttribute("disabled", "true");
+
+    letter.style.color = "#888";
+    letter.style.pointerEvents = "none";
   });
 }
 

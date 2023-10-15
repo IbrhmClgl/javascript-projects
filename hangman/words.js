@@ -7,5 +7,4 @@ const words = [
   "flex",
   "display",
   "position",
-  "color",
 ];

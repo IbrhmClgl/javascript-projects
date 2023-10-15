@@ -96,3 +96,8 @@ p:hover {
   background-color: rgba(244, 195, 117, 0.622);
   cursor: pointer;
 }
+
+.disabled-letter {
+  color: #5759c2;
+  pointer-events: none;
+}
