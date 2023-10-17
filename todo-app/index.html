@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
+    <link rel="stylesheet" href="style.css">
+    <span class="pln"><!-- Google Fonts -->
+    </span>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"><span
+        class="pln">
+
+        <!-- CSS Reset -->
+    </span>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><span
+        class="pln">
+
+        <!-- Milligram CSS -->
+    </span>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"><span
+        class="pln">
+
+        <!-- You should properly set the path from the main file. --></span>
+    <title>Todo App</title>
+</head>
+
+<body>
+    <Header>
+        <h1>Todo App</h1>
+    </Header>
+    <main class="container">
+        <div class="menu">
+            <label id="all" for="all">All
+                <input id="all" type="radio" class="all input-menu" checked>
+            </label>
+            <label id="open" for="open">Open
+                <input id="open" type="radio" class="open input-menu">
+            </label>
+            <label id="done" for="done">Done
+                <input id="done" type="radio" class="done input-menu">
+            </label>
+        </div>
+        <button class="remove">Remove done todos</button>
+        <section>
+            <input id="todo-text" type="text" placeholder="Add Your Todo" value="">
+            <button class="addBtn">Add</button>
+        </section>
+        <div class="list">
+            <ul class="list">
+
+            </ul>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

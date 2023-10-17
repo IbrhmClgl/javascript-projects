@@ -1,0 +1,19 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  /* height: 100vh; */
+  width: 100vw;
+  margin: 30px;
+  overflow: hidden;
+}
+
+.remove {
+  margin: 15px 0;
+}
+
+section {
+  margin-bottom: 15px;
+}
