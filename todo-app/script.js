@@ -23,6 +23,7 @@ menu.addEventListener("click", (e) => {
 
     e.target.checked = true;
     lastCheckbox = e.target;
+
     state = e.target.id;
 
     renderNotes(notes);
