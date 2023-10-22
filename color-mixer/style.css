@@ -7,7 +7,7 @@ body {
   user-select: none;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 900px) {
   .header {
     height: 20rem;
     display: flex;
@@ -22,6 +22,12 @@ body {
 
   section {
     height: 60px;
+  }
+
+  button {
+    margin-top: 3rem;
+    font-size: 2rem;
+    border-radius: 1rem;
   }
 }
 
@@ -52,4 +58,10 @@ p {
   position: absolute;
   letter-spacing: 3px;
   right: 1%;
+}
+
+button {
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
 }
