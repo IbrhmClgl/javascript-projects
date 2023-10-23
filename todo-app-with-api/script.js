@@ -87,18 +87,19 @@ function renderTodos() {
 
     // when checkbox is clicked call updateDOne function
     checkbox.addEventListener("click", (e) => {
+      // select the checked box
       if (e.target.checked) {
         list.style.textDecoration = "line-through";
         checkbox.checked = true;
         checkedValue = list.textContent;
-        console.log(checkedValue);
 
         updateDone();
+
+        // select the unchecked box
       } else if (!e.target.checked) {
         list.style.textDecoration = "none";
         checkbox.checked = false;
         checkedValue = list.textContent;
-        console.log(checkedValue);
 
         updateDone();
       }
@@ -115,6 +116,7 @@ function updateDone() {
         headers: {
           "Content-Type": "application/json",
         },
+        // define the replacment
         body: JSON.stringify({
           id: todo.id,
           description: todo.description,
