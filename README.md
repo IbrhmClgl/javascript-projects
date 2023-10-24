@@ -4,4 +4,4 @@ In this repo i provide all my projects that i implemented during my bootcamp at 
 
 Feel free to clone this repo and test my projects.
 
-I appreciate any code reviws and suggestions for improvements.
+I appreciate any code reviews and suggestions for improvements.
