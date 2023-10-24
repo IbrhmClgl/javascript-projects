@@ -8,7 +8,6 @@ const newTodoInput = document.querySelector(".new-todo-input");
 const url = "http://localhost:4730/todos";
 
 let todos = [];
-let id;
 let checkedValue;
 
 addBtn.addEventListener("click", () => {
@@ -54,7 +53,7 @@ deleteBtn.addEventListener("click", () => {
   });
 });
 
-// fetch the todo api
+// fetch data from the todo api
 function loadTodos() {
   fetch(url)
     .then((res) => {
@@ -65,6 +64,7 @@ function loadTodos() {
       renderTodos();
     });
 }
+loadTodos();
 
 // Render the todos
 function renderTodos() {
@@ -132,5 +132,3 @@ function updateDone() {
     }
   });
 }
-
-loadTodos();
