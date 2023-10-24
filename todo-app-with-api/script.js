@@ -9,27 +9,16 @@ const url = "http://localhost:4730/todos";
 
 let todos = [];
 let checkedValue;
+let newTodo;
 
 addBtn.addEventListener("click", () => {
-  const newTodoText = newTodoInput.value;
+  addNewTodo();
+});
 
-  const newTodo = {
-    description: newTodoText,
-    done: false,
-  };
-
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newTodo),
-  }).then((res) => {
-    res.json().then((newTodoFromApi) => {
-      todos.push(newTodoFromApi);
-      renderTodos();
-    });
-  });
+newTodoInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addNewTodo();
+  }
 });
 
 // delete all todos whith done property true
@@ -103,6 +92,29 @@ function renderTodos() {
 
         updateDone();
       }
+    });
+  });
+}
+
+// add new todos
+function addNewTodo() {
+  const newTodoText = newTodoInput.value;
+
+  const newTodo = {
+    description: newTodoText,
+    done: false,
+  };
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newTodo),
+  }).then((res) => {
+    res.json().then((newTodoFromApi) => {
+      todos.push(newTodoFromApi);
+      renderTodos();
     });
   });
 }
