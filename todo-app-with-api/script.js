@@ -25,7 +25,7 @@ newTodoInput.addEventListener("keypress", (e) => {
 deleteBtn.addEventListener("click", () => {
   todos.forEach((todo) => {
     if (todo.done === true) {
-      fetch(`http://localhost:4730/todos/${todo.id}`, {
+      fetch(`${url}/${todo.id}`, {
         method: "DELETE",
       })
         .then((res) => {
@@ -53,7 +53,6 @@ function loadTodos() {
       renderTodos();
     });
 }
-loadTodos();
 
 // Render the todos
 function renderTodos() {
@@ -123,7 +122,7 @@ function addNewTodo() {
 function updateDone() {
   todos.forEach((todo) => {
     if (todo.done === false && todo.description === checkedValue) {
-      fetch(`http://localhost:4730/todos/${todo.id}`, {
+      fetch(`${url}/${todo.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -144,3 +143,5 @@ function updateDone() {
     }
   });
 }
+
+loadTodos();
