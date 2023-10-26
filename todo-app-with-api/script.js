@@ -68,7 +68,7 @@ function renderTodos() {
     todoListEl.appendChild(list);
     list.appendChild(checkbox);
 
-    if (todo.done === true) {
+    if (todo.done) {
       checkbox.checked = true;
       list.style.textDecoration = "line-through";
     }
