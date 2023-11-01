@@ -74,7 +74,7 @@ function renderTodos() {
     }
 
     // when checkbox is clicked call updateDOne function
-    checkbox.addEventListener("click", (e) => {
+    checkbox.addEventListener("change", (e) => {
       // select the checked box
       if (e.target.checked) {
         list.style.textDecoration = "line-through";
