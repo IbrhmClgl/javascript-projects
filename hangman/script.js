@@ -49,6 +49,7 @@ newGame.addEventListener("click", () => {
   hiddenWord.textContent = str.repeat(randomWord.length).split("").join("");
   counter = 1;
   counterFails.textContent = 0;
+  resetLetters();
 });
 
 function eventTrigger(letter, char) {
@@ -84,6 +85,15 @@ function eventTrigger(letter, char) {
 
     letter.style.color = "#888";
     letter.style.pointerEvents = "none";
+  });
+}
+
+function resetLetters() {
+  const letters = document.querySelectorAll("p");
+  letters.forEach((letter) => {
+    letter.setAttribute("disabled", "false");
+    letter.style.color = "#000";
+    letter.style.pointerEvents = "auto";
   });
 }
 
