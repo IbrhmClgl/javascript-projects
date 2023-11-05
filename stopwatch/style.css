@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333333;
+}
+
+.timer-btn {
+  width: 80px;
+  height: 30px;
+  border: 3px solid;
+  border-radius: 10px;
+  background-color: #333333;
+  color: white;
+  cursor: pointer;
+  font-family: consolas, monospace;
+  margin: 5px;
+}
+
+.time-display {
+  font-size: 80px;
+  color: #40c437;
+  font-family: consolas, monospace;
+}
+
+.time-container {
+  text-align: center;
+  border: 3px solid #40c437;
+  border-radius: 25px;
+  background-color: black;
+  width: 400px;
+  box-shadow: 0 0 50px #40c437;
+}
+
+@media screen and (max-width: 415px) {
+  .time-container {
+    width: 300px;
+  }
+
+  .time-display {
+    font-size: 50px;
+  }
+}
