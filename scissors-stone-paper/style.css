@@ -52,3 +52,14 @@ button {
   cursor: pointer;
   font-size: 45px;
 }
+
+@media screen and (max-width: 650px) {
+  body {
+    display: block;
+  }
+
+  .game-container {
+    margin: 0 auto;
+    width: 350px;
+  }
+}
