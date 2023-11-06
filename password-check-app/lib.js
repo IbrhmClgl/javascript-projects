@@ -1,7 +1,7 @@
-export function checkEquality(input1, input2, text) {
+export function checkEquality(input1, input2) {
   if (input1 === input2) {
-    text.textContent = "Equal ✅";
+    return "Equal ✅";
   } else {
-    text.textContent = "Not equal 🚫";
+    return "Not equal 🚫";
   }
 }

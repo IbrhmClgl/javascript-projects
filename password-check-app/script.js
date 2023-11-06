@@ -8,5 +8,5 @@ const btnEl = document.querySelector("button");
 const phrase = document.querySelector("p");
 
 btnEl.addEventListener("click", () => {
-  checkEquality(inputField1El.value, inputField2El.value, phrase);
+  phrase.textContent = checkEquality(inputField1El.value, inputField2El.value);
 });
