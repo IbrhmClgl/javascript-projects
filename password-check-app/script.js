@@ -8,5 +8,9 @@ const btnEl = document.querySelector("button");
 const phrase = document.querySelector("p");
 
 btnEl.addEventListener("click", () => {
-  phrase.textContent = checkEquality(inputField1El.value, inputField2El.value);
+  if (checkEquality(inputField1El.value, inputField2El.value)) {
+    phrase.textContent = "Equal ✅";
+  } else {
+    phrase.textContent = "Not equal 🚫";
+  }
 });
