@@ -23,5 +23,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # Run the command to install node deps
       - run: npm ci
-      # Run the command for the unit tests
+      # Run jest
       - run: npm run test
